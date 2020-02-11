@@ -73,7 +73,11 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
         },
-        "patches": {},
+        "patches": {
+            "drupal/core": {
+                "3111645-5: Uninstall entity_reference module and prevent it being enabled again, remove deprecated code": "https://www.drupal.org/files/issues/2020-02-11/3111645-5.patch"
+            }
+        },
         "drupal-scaffold": {
             "initial": {
                 ".editorconfig": "../.editorconfig",

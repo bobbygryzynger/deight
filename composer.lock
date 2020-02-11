@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b7aab97d0eb5f5aca020dd6ee845c87",
+    "content-hash": "53cedbc2c6b9430a4f49d362c8ae320c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1533,6 +1533,9 @@
                         "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
                         "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
                     }
+                },
+                "patches_applied": {
+                    "3111645-5: Uninstall entity_reference module and prevent it being enabled again, remove deprecated code": "https://www.drupal.org/files/issues/2020-02-11/3111645-5.patch"
                 }
             },
             "autoload": {
