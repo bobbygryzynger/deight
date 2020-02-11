@@ -4,5 +4,5 @@
 ## Commands
 Create core patch using staged files:
 ```
-git diff --src=prefix=a/core/ --dst-prefix=b/core/ --cached > /path/to/file.patch
+git diff --src-prefix=a/core/ --dst-prefix=b/core/ --cached > /path/to/file.patch
 ```
