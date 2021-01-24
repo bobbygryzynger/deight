@@ -1,0 +1,22 @@
+# Chromedriver configuration for Drupal FunctionalJavascript tests.
+#
+# To access Chromedriver's logs, run:
+# docker exec -it ddev-${DDEV_SITENAME}-chromedriver cat /tmp/chromedriver.log
+#
+# @see https://mglaman.dev/blog/running-drupals-functionaljavascript-tests-ddev
+version: '3.6'
+services:
+  chromedriver:
+    container_name: ddev-${DDEV_SITENAME}-chromedriver
+    image: drupalci/chromedriver:production
+     # These labels ensure this service is discoverable by ddev.
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+  # This links the Chromedriver service to the web service defined in the main
+  # docker-compose.yml, allowing applications running inside the web container
+  # to access the Chromedriver service at http://chromedriver:9515. Port 9515 is
+  # exposed in the drupalci/chromedriver:production image.
+  web:
+    links:
+      - chromedriver:chromedriver
